@@ -66,11 +66,11 @@ public class Client {
 
 	        // composa els resultats d'aquest lloguer
 	        resultat += "\t" +
-	            lloguer.getVehicle().getMarca() +
-	            " " +
-	            lloguer.getVehicle().getModel() + ": " +
-	            (quantitat * 30) + "€" + "\n";
-	        total += quantitat * 30;
+                lloguer.getVehicle().getMarca() +
+                " " +
+                lloguer.getVehicle().getModel() + ": " +
+                (lloguer.quantitat() * 30) + "€" + "\n";
+            total += lloguer.quantitat() * 30;
 	    }
 
 	    // afegeix informació final
