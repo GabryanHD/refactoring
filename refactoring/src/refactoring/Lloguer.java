@@ -26,23 +26,23 @@ public class Lloguer {
 
 	public Vehicle getVehicle() { return vehicle;}
 	
-	protected static double quantitat(Lloguer lloguer) {
+	protected double quantitat() {
     	double quantitat = 0;
-    	switch (lloguer.getVehicle().getCategoria()) {
+    	switch (getVehicle().getCategoria()) {
 	        case 0:
 	            quantitat += 3;
-	            if (lloguer.getDies() > 3) {
-	                quantitat += (lloguer.getDies() - 3) * 1.5;
+	            if (getDies() > 3) {
+	                quantitat += (getDies() - 3) * 1.5;
 	            }
 	            break;
 	        case 1:
 	            quantitat += 4;
-	            if (lloguer.getDies() > 2) {
-	                quantitat += (lloguer.getDies() - 2) * 2.5;
+	            if (getDies() > 2) {
+	                quantitat += (getDies() - 2) * 2.5;
 	            }
 	            break;
 	        case 2:
-	            quantitat += lloguer.getDies() * 6;
+	            quantitat += getDies() * 6;
 	            break;
 	    }
     	return quantitat;

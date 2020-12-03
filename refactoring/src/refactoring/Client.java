@@ -52,7 +52,7 @@ public class Client {
 	        getNom() +
 	        " (" + getNif() + ")\n";
 	    for (Lloguer lloguer: lloguers) {
-	        double quantitat = Lloguer.quantitat(lloguer);
+	        double quantitat = lloguer.quantitat();
 	        
 
 	        // afegeix lloguers freqüents
