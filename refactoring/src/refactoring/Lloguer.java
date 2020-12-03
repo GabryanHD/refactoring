@@ -34,26 +34,26 @@ public class Lloguer {
 
 	public Vehicle getVehicle() { return vehicle;}
 	
-	protected double quantitat() {
-    	double quantitat = 0;
+	protected double unitatsCost() {
+    	double unitatsCost = 0;
     	switch (getVehicle().getCategoria()) {
 	        case 0:
-	            quantitat += UNITATS_DE_COST_VEHICLE_BASIC;
+	        	unitatsCost += UNITATS_DE_COST_VEHICLE_BASIC;
 	            if (getDies() > DIES_INICIALS_BASIC) {
-	                quantitat += (getDies() - DIES_INICIALS_BASIC) * COST_EXTRA_BASIC;
+	                unitatsCost += (getDies() - DIES_INICIALS_BASIC) * COST_EXTRA_BASIC;
 	            }
 	            break;
 	        case 1:
-	            quantitat += UNITATS_DE_COST_VEHICLE_GENERAL;
+	            unitatsCost += UNITATS_DE_COST_VEHICLE_GENERAL;
 	            if (getDies() > DIES_INICIALS_GENERAL) {
-	                quantitat += (getDies() - DIES_INICIALS_GENERAL) * COST_EXTRA_GENERAL;
+	                unitatsCost += (getDies() - DIES_INICIALS_GENERAL) * COST_EXTRA_GENERAL;
 	            }
 	            break;
 	        case 2:
-	            quantitat += getDies() * COST_DELUXE;
+	            unitatsCost += getDies() * COST_DELUXE;
 	            break;
 	    }
-    	return quantitat;
+    	return unitatsCost;
     }
 	
 	protected int bonificacions() {
