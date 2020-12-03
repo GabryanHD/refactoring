@@ -3,6 +3,8 @@ package refactoring;
 import java.util.Vector;
 
 public class Client {
+	private static final double EUROS_PER_UNITAT_DE_COST = 30;
+
     private String nif;
     private String nom;
     private String telefon;
@@ -55,7 +57,7 @@ public class Client {
     	double total = 0;
     	
     	for (Lloguer lloguer: lloguers) {
-    		total += lloguer.quantitat() * 30;
+    		total += lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST;
     	}
     	return total;
     }
@@ -83,7 +85,7 @@ public class Client {
 	            lloguer.getVehicle().getMarca() +
 	            " " +
 	            lloguer.getVehicle().getModel() + ": " +
-	            (lloguer.quantitat() * 30) + "€" + "\n";
+	            (lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
     	}
     	return resultat;
     }

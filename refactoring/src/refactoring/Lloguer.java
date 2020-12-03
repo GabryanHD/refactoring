@@ -3,6 +3,14 @@ package refactoring;
 import java.util.Date;
 
 public class Lloguer {
+	private static final double UNITATS_DE_COST_VEHICLE_BASIC = 3;
+	private static final double UNITATS_DE_COST_VEHICLE_GENERAL = 4;
+	private static final double DIES_INICIALS_BASIC = 3;
+	private static final double DIES_INICIALS_GENERAL= 2;
+	private static final double COST_EXTRA_BASIC = 1.5;
+	private static final double COST_EXTRA_GENERAL = 2.5;
+	private static final double COST_DELUXE = 6;
+	
 	private Date data;
 	private int dies;
 	private Vehicle vehicle;
@@ -30,19 +38,19 @@ public class Lloguer {
     	double quantitat = 0;
     	switch (getVehicle().getCategoria()) {
 	        case 0:
-	            quantitat += 3;
-	            if (getDies() > 3) {
-	                quantitat += (getDies() - 3) * 1.5;
+	            quantitat += UNITATS_DE_COST_VEHICLE_BASIC;
+	            if (getDies() > DIES_INICIALS_BASIC) {
+	                quantitat += (getDies() - DIES_INICIALS_BASIC) * COST_EXTRA_BASIC;
 	            }
 	            break;
 	        case 1:
-	            quantitat += 4;
-	            if (getDies() > 2) {
-	                quantitat += (getDies() - 2) * 2.5;
+	            quantitat += UNITATS_DE_COST_VEHICLE_GENERAL;
+	            if (getDies() > DIES_INICIALS_GENERAL) {
+	                quantitat += (getDies() - DIES_INICIALS_GENERAL) * COST_EXTRA_GENERAL;
 	            }
 	            break;
 	        case 2:
-	            quantitat += getDies() * 6;
+	            quantitat += getDies() * COST_DELUXE;
 	            break;
 	    }
     	return quantitat;
